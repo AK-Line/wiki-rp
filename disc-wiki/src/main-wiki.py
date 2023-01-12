@@ -86,10 +86,3 @@ bot.run("DISCORD_KEY_PLACEHOLDER")
 #     print("Commande post")
 #     if ctx.author.id == 164786647072899072:
 #         await ctx.send(args[0])
-    
-          
-            
-
-
-#Nori
-#bot.run("Njg5MjU3NzYyNjkzMDU0NDc3.XnAPUA.McPVL9W80MrfNxl7kKdGIYy2X9k")
