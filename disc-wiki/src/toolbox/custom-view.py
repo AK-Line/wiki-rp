@@ -26,6 +26,7 @@ class OcGalView(View):
         self.player_filter = None #int type
         self.oc_filter = None #random selection
         self.current_oc = None 
+        self.current_gallery = None #dataframe with index, image, metadata (author, context, tags ?)
         self.current_page = 0
         self.nb_page = 0
         
@@ -43,10 +44,18 @@ class OcGalView(View):
         pass
 
     def retrieve_gallery(self):
+        # db request
+        # file request (?)
         pass
 
     def validate(self, interaction, validate_button):
-        pass
+        if self.oc_filter == self.current_oc:
+            return
+        self.current_oc = self.oc_filter
+        self.retrieve_gallery()
+        self.current_page = 0
+        self.generate_embed()
+        #update ui_view
 
     def select_edit(self, interaction, select_button):
         if select_button.custom_id == "sel_oc":
